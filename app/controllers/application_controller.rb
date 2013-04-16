@@ -23,6 +23,12 @@ class ApplicationController < ActionController::Base
     !!current_user
   end
 
+  def require_admin
+    unless current_user.is_admin?
+      flash[:error] = "You are not authorized to access the requested page."
+      redirect_to root_path
+    end
+  end
   def tally_votes(election)
     ballot_ary = []
     election.reload

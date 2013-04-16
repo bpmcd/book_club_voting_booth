@@ -1,4 +1,6 @@
 class ElectionsController < ApplicationController
+  before_filter :require_login, :require_admin, except: :index
+
   # GET /elections
   # GET /elections.json
   def index
