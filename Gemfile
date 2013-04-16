@@ -12,7 +12,7 @@ gem 'activerecord-jdbcpostgresql-adapter'
 
 gem 'jruby-openssl'
 
-gem 'rubyvote'
+gem 'rubyvote', :git => 'git://github.com/bpmcd/rubyvote.git'
 gem 'bootstrap-sass'
 gem 'haml-rails'
 gem 'simple_form'
