@@ -1,0 +1,34 @@
+%h1 Current elections
+
+%table.table.table-hover
+  %tr
+    %th Title
+    %th Expiry
+    %th
+    %th
+    %th
+    %th
+    %th Winner
+
+  - @elections.each do |election|
+    -if election.end_date.future? || election.end_date.today?
+      %tr
+        %td= election.title
+        %td= election.end_date
+        -if current_user && current_user.is_admin?
+          %td= link_to 'Show', election
+          %td= link_to 'Edit', edit_election_path(election)
+          %td= link_to 'Destroy', election, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        -else
+          %td
+          %td
+          %td
+        %td
+          %a{:class => ["btn", "btn-primary"], :href => vote_path(election)}
+            Vote Now!
+        %td
+          = election.winner
+
+%br
+- if current_user && current_user.is_admin?
+  = link_to 'New Election', new_election_path

@@ -1,0 +1,10 @@
+= simple_form_for(@candidate) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :description
+    = f.input :info_url
+
+  .form-actions
+    = f.button :submit

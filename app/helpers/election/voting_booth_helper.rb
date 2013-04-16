@@ -1,0 +1,2 @@
+module Election::VotingBoothHelper
+end

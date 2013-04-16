@@ -1,0 +1,19 @@
+= simple_nested_form_for(@election) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :title
+    = f.input :end_date
+    .form-inputs 
+      %legend Candidates
+      = f.simple_fields_for :candidates do |c|
+        .well
+          = c.input :name, :item_wrapper_class => 'inline'
+          = c.input :description, :item_wrapper_class => 'inline'
+          = c.input :info_url, :item_wrapper_class => 'inline'
+      %p
+        %i.icon-plus
+        = f.link_to_add "Add a Candidate", :candidates
+
+  .form-actions
+    = f.button :submit

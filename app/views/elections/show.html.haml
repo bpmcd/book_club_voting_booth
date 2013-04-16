@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @election.title
+%p
+  %b End date:
+  = @election.end_date
+%p
+  %b Winner:
+  = @election.winner
+%p
+  %b Candidates:
+  %ul
+    - @election.candidates.each do |candidate|
+      %li
+        = candidate.name
+        \| 
+        = candidate.description
+        \| 
+        = candidate.info_url
+= link_to 'Edit', edit_election_path(@election)
+\|
+= link_to 'Back', elections_path

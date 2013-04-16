@@ -34,4 +34,5 @@ BookClubVotingBooth::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+  ENV['YAMMER_DOMAIN'] = 'https://staging.yammer.com'
 end

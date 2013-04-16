@@ -1,0 +1,27 @@
+%h1 Voting Booth
+= form_tag("/voting_booth/cast_ballot", :method => "post") do
+  - if !@ballot.errors.empty?
+    %div{:class => "alert alert-error"}
+      %ul
+        - @ballot.errors.keys do |k|
+          %li
+            = k
+
+  .form-inputs
+    %input{:type => "hidden", :id => "election_id", :name => "election_id", :value => @ballot.election.id}
+    %input{:type => "hidden", :id => "ballot_data", :name => "ballot_data"}
+    %h2 Candidates
+    .grp-container
+      %ul.sortable
+        - @ballot.election.candidates.each do |c|
+          %li.ui-state-default{:id => "ranking_#{c.id}"}
+            %i.icon-resize-vertical
+            = c.name 
+            | 
+            = c.description
+            | 
+            %a{:href => "http://" + c.info_url, :target => "_blank"}
+              = c.info_url
+
+  .form-actions
+    %input{:class => "btn btn-primary", :type => "submit", :value => "Cast Ballot!"}
