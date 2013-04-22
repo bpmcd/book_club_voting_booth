@@ -14,9 +14,6 @@ class ApplicationController < ActionController::Base
     unless logged_in?
       flash[:error] = "You must login first!"
       redirect_to root_path
-    en
-      flash[:error] = "You are not authorized to access the requested page."
-      redirect_to root_path
     end
   end
 
