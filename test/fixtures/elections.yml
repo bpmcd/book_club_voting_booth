@@ -1,9 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  title: MyString
+  title: "Election 1"
   end_date: 2013-03-30
 
 two:
-  title: MyString
+  title: "Election 2"
   end_date: 2013-03-30
+  candidates: c_one, c_two

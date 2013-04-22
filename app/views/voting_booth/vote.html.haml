@@ -10,18 +10,22 @@
   .form-inputs
     %input{:type => "hidden", :id => "election_id", :name => "election_id", :value => @ballot.election.id}
     %input{:type => "hidden", :id => "ballot_data", :name => "ballot_data"}
-    %h2 Candidates
+    %p.lead
+      Rank the candidates by sorting them from Most Desired (top) to Least Desired (bottom).
     .grp-container
       %ul.sortable
         - @ballot.election.candidates.each do |c|
-          %li.ui-state-default{:id => "ranking_#{c.id}"}
-            %i.icon-resize-vertical
-            = c.name 
-            | 
-            = c.description
-            | 
-            %a{:href => "http://" + c.info_url, :target => "_blank"}
-              = c.info_url
+          %li.ui-state-default{:id => "ranking_#{c.id}", :title => c.description}
+            %span
+              %i.icon-resize-vertical
+              = c.name 
+            %span
+              - if !c.info_url.blank?
+                %a{:href => "http://" + c.info_url, :target => "_blank"}
+                  = c.info_url
+            %span.pull-right
+              %a{:class => "search-link", :href => "http://en.wikipedia.org/w/index.php?search=#{c.name}", :target => "_blank"}
+                Search Wikipedia
 
   .form-actions
     %input{:class => "btn btn-primary", :type => "submit", :value => "Cast Ballot!"}

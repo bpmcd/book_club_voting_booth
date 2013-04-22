@@ -10,7 +10,7 @@ gem 'puma'
 # gem 'activerecord-jdbcsqlite3-adapter'
 gem 'activerecord-jdbcpostgresql-adapter'
 
-gem 'jruby-openssl'
+# gem 'jruby-openssl'
 
 gem 'rubyvote', :git => 'git://github.com/bpmcd/rubyvote.git'
 gem 'bootstrap-sass'
@@ -35,6 +35,10 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+group :test do
+  gem 'simplecov'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

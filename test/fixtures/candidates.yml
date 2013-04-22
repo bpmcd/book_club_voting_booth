@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  name: MyString
-  description: MyString
-  info_url: MyString
+c_one:
+  name: "book 1"
+  description: "book 1 desc"
+  info_url: "www.wikipedia.com"
 
-two:
-  name: MyString
-  description: MyString
-  info_url: MyString
+c_two:
+  name: "book 2"
+  description: "book 2 desc"
+  info_url: "www.google.com"

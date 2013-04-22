@@ -11,15 +11,16 @@ class ApplicationController < ActionController::Base
   end
 
   def require_login
-    puts "in #require_login"
     unless logged_in?
       flash[:error] = "You must login first!"
+      redirect_to root_path
+    en
+      flash[:error] = "You are not authorized to access the requested page."
       redirect_to root_path
     end
   end
 
   def logged_in?
-    puts "in #logged_in?"
     !!current_user
   end
 
@@ -29,6 +30,7 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
     end
   end
+
   def tally_votes(election)
     ballot_ary = []
     election.reload
@@ -40,9 +42,10 @@ class ApplicationController < ActionController::Base
       ballot_ary << vote_ary
     end
     result = InstantRunoffVote.new(ballot_ary).result
-    puts "winner is: #{result.winner.inspect}"
+    # puts "winner is: #{result.winner.inspect}"
 
-    save_results = election.save
+    election.winner = result.winner.name
+    election.save
     election.winner
   end
 end

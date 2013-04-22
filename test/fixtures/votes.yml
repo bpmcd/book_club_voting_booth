@@ -1,7 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
+v_one:
   rank: 1
+  ballot: b_one
+  candidate: c_one
 
-two:
-  rank: 1
+v_two:
+  rank: 2
+  ballot: b_one
+  candidate: c_two
