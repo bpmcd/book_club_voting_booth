@@ -4,11 +4,10 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-b_one:
-  election: two
-  user: brian
-
-b_two: 
-  election: one
-  user: bob
-
+# b_one:
+#   election: two
+#   user: brian
+# 
+# b_two: 
+#   election: one
+#   user: bob

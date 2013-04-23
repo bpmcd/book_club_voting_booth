@@ -1,8 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 brian:
-  provider: MyString
-  uid: MyString
+  provider: yammer
+  uid: 4524524
   name: brian
   email: brian_mcdevitt@cargill.com
 

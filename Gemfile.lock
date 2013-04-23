@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/bpmcd/rubyvote.git
-  revision: 37ac0ef8afae1c56c1e7a4480df5b25d3334e0bb
+  revision: be263a5a847351b4e2874a38956c04cfcf80e4c3
   specs:
-    rubyvote (0.3.0)
+    rubyvote (0.3.1)
 
 GIT
   remote: git://github.com/ryanb/nested_form.git
