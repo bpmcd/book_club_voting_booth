@@ -42,7 +42,7 @@ class ApplicationController < ActionController::Base
     end
     puts
     puts "ballot_ary: #{ballot_ary.inspect}"
-    result = InstantRunoffVote.new(ballot_ary).result
+    result = InstantRunoffAllVote.new(ballot_ary).result
     # puts "winner is: #{result.inspect}"
     puts
 
