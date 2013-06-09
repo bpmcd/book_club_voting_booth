@@ -3,6 +3,7 @@ require 'rubyvote'
 class ApplicationController < ActionController::Base
   protect_from_forgery
   helper_method :current_user
+  helper_method :tally_votes
 
   private
 
@@ -50,6 +51,6 @@ class ApplicationController < ActionController::Base
       election.winner = result.winners[0].name
       election.save
     end
-    election.winner
+    result
   end
 end
