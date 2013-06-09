@@ -20,7 +20,7 @@
         %td= election.winner
         %td
           - result = tally_votes(election)
-          = result.ranked_candidates[1].name
+          = result.ranked_candidates[1].name unless result.ranked_candidates.nil? || result.ranked_candidates[1].nil?
         %td
           %a{:class => ["btn", "btn-primary"], :href => vote_path(election)}
             Vote Now!
